@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{JuliaHealth Ecosystem Paper}
+\author{jacobszelko }
+\date{July 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+% Include publications about these ecosystems here as well
+\section{Ecosystems within JuliaHealth}
+
+\subsection{Medical Imaging}
+ The JuliaHealth medical imaging ecosystem offers a high-performance, modular framework for end-to-end medical imaging research, built on the Julia programming language. 
+Main package for simulation of general Magnetic Resonance Imaging:
+KOMAMRI ... 
+ 
+Main packages for segmentation and regression are:
+
+MedImages.jl: This is the foundational layer, which standardizes the import of various medical imaging data formats (such as NIfTI and DICOM) into a consistent standardized, metadata rich data structure. This ensures data integrity and reproducibility.
+
+MedEye3d.jl: This package provides an interactive, high-performance 3D visualization engine using OpenGL for rapid, qualitative assessment, and manual annotation of medical volumes.
+
+MedEval3D.jl: The high-performance computational core of the ecosystem, this package uses CUDA to offer massively parallelized, GPU-accelerated calculation of segmentation evaluation metrics, achieving speedups of 40x-214x over CPU-based methods.
+
+MedPipe3D.jl: This package acts as an orchestrator, integrating the other components into a cohesive workflow. It pragmatically uses PythonCall to bridge with the mature MONAI library for complex data preprocessing, allowing researchers to leverage existing Python tools while benefiting from Julia's high-performance components for visualization and evaluation.
+
+All of the above are still in a phase of acrive development and in diffrent stages of maturity.
+
+\subsection{Observational Health}
+
+Observational health research focuses on using real-world data such as electronic health records, claims data and other clinical information to generate evidence beyond traditional clinical trials. Within JuliaHealth, this area has evolved into a robust subecosystem with tools designed to support essential tasks like cohort creation, data standardization, and database interaction. Packages like OMOPCDMCohortCreator.jl, OMOPCommonDataModel.jl, and OHDSIAPI.jl assist researchers in defining patient populations, managing OMOP-formatted data and integrating with external services across systems. The ecosystem also includes tools such as Thunderbolt.jl, KomaMRI.jl, and DICOM.jl, which support imaging workflows, data interoperability and reproducible health data analysis. These tools are built to operate with the OMOP Common Data Model, enabling consistent analyses across datasets while preserving data privacy. Julia’s strengths in performance, modularity and composability make it easier to develop efficient and scalable research pipelines. This setup has already enabled collaborative studies and continues to support transparent, large-scale observational research across institutions.
+
+\subsection{Geospatial Health}
+
+\subsection{Standards and Interoperability}
+
+\section{Discussion}
+
+\subsection{Partner Groups}
+
+\subsection{Composition}
+JuliaHealth is built around a composable design philosophy, where small, focused packages work together to support complex research workflows. The modular architecture minimizes redundancy, promotes reuse and enables researchers to build flexible, maintainable pipelines for health studies.
+
+\subsection{Language Interoperability}
+
+\section{Future}
+
+\subsection{Emerging Ecosystems}
+
+\begin{itemize}
+    \item Large Language Models
+    \item ....
+\end{itemize}
+
+\subsection{Outreach and Education}
+JuliaHealth maintains an active blog and community channel encouraging contributions via tutorials, blog posts and workshops. This outreach is coupled with mentorship programs and GitHub-based contributions, aimed at lowering barriers for new users and promoting documentation literacy across JuliaHealth tools.
+
+\section{Conclusion}
+JuliaHealth provides a modular, standards-based infrastructure for observational health research, with tools that span cohort design, OMOP CDM integration, medical imaging and data interoperability. Its alignment with composable software practices and support for external standards enables researchers to build transparent, scalable workflows across institutions. As development continues in areas like patient-level prediction and cross-language integration, JuliaHealth offers a practical and extensible foundation for health informatics research.
+\end{document}
